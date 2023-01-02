@@ -1,7 +1,13 @@
+import Heading from '../../components/Heading';
+import { theme } from '../../styles/theme';
+import * as Styled from './style';
+
 function Home() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <Styled.Wrapper theme={theme}>
+        <Heading>Baguiu doido</Heading>
+      </Styled.Wrapper>
     </div>
   );
 }
