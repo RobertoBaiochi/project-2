@@ -2,7 +2,7 @@ import P from 'prop-types';
 import * as Styled from './styles';
 import { KeyboardArrowUp } from '@styled-icons/material-outlined/KeyboardArrowUp';
 
-const GoTop = ({ children }) => {
+const GoTop = () => {
   return (
     <Styled.Container href="#" aria-label="Go to top" title="Go to top">
       <KeyboardArrowUp />
@@ -11,7 +11,3 @@ const GoTop = ({ children }) => {
 };
 
 export default GoTop;
-
-GoTop.propTypes = {
-  children: P.node.isRequired,
-};

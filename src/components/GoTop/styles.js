@@ -13,6 +13,6 @@ export const Container = styled.a`
     bottom: 2rem;
     right: 3rem;
     z-index: 6;
-    opacity: 0.8;
+    opacity: 0.7;
   `};
 `;
