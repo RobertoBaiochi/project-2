@@ -9,7 +9,7 @@ const menuVisible = (theme) => css`
 
 export const Container = styled.div`
   ${({ theme, visible }) => css`
-    width: 100%
+    width: 100%;
     position: fixed;
     z-index: 5;
     top: 0;
@@ -33,7 +33,7 @@ export const Container = styled.div`
       height: 100vh;
       visibility: hidden;
       opacity: 0;
-      ${visible && menuVisible(theme)}
+      ${visible && menuVisible(theme)};
 
       > ${SectionContainer} {
         display: grid;
@@ -87,6 +87,7 @@ export const Button = styled.button`
         display: flex;
         align-items: center;
         justify-content: center;
+
       }
 
       > svg {

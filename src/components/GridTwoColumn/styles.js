@@ -22,7 +22,7 @@ export const TextContainer = styled.div`
   ${({ theme }) => css`
     @media ${theme.media.lteMedium} {
       margin-bottom: ${theme.spacing.large};
-      text-align: center
+      text-align: center;
     }
   `};
 `;

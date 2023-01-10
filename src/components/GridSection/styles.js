@@ -33,7 +33,7 @@ export const GridElement = styled.div`
       font-size: 7rem;
       top: -3rem;
       left: -${theme.spacing.xxlarge};
-      transform: rotate(10deg)
+      transform: rotate(10deg);
     }
   `};
 `;
