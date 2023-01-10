@@ -14,7 +14,8 @@ exports[`<Menu /> should not render links 1`] = `
 }
 
 .c2 {
-  width: 100% position:fixed;
+  width: 100%;
+  position: fixed;
   z-index: 5;
   top: 0;
   left: 0;
@@ -233,7 +234,8 @@ exports[`<Menu /> should render Logo and Main Menu Nav 1`] = `
 }
 
 .c2 {
-  width: 100% position:fixed;
+  width: 100%;
+  position: fixed;
   z-index: 5;
   top: 0;
   left: 0;

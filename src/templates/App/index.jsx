@@ -1,7 +1,8 @@
 import Heading from '../../components/Heading';
 import { theme } from '../../styles/theme';
 import Base from '../Base';
-import { mockBase } from '../Base/stories';
+import { mockBase } from '../Base/mock';
+
 import * as Styled from './style';
 
 function Home() {
