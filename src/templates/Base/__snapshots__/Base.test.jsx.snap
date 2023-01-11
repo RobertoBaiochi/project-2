@@ -826,11 +826,7 @@ exports[`<Base /> should match with snapshot 1`] = `
       >
         <p
           class="c15 c16"
-        >
-          <p>
-            Teste de footer
-          </p>
-        </p>
+        />
       </div>
     </footer>
   </div>
