@@ -1,10 +1,24 @@
-import { mapSections, mapSectionTwoColumns } from './map-sections';
+import {
+  mapSectionContent,
+  mapSections,
+  mapSectionTwoColumns,
+} from './map-sections';
 
 describe('map-sections', () => {
   it('should render predefined section if no data', () => {
     const data = mapSections();
 
     expect(data).toEqual([]);
+  });
+
+  it('should map section two columns if data is empty', () => {
+    const data = mapSectionTwoColumns();
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('');
+    expect(data.sectionId).toBe('');
+    expect(data.srcImg).toBe('');
+    expect(data.text).toBe('');
+    expect(data.title).toBe('');
   });
 
   it('should map sections two columns', () => {
@@ -53,5 +67,38 @@ describe('map-sections', () => {
     expect(data.srcImg).toBe('image.svg');
     expect(data.text).toBe('abc');
     expect(data.title).toBe('title');
+  });
+
+  it('should map section content if data is empty', () => {
+    const data = mapSectionContent();
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('');
+    expect(data.sectionId).toBe('');
+    expect(data.html).toBe('');
+    expect(data.title).toBe('');
+  });
+
+  it('should map section content if data is empty', () => {
+    const data = mapSectionContent({
+      __component: 'section.section-content',
+      _id: '602fdf2d540c00269e056177',
+      title: 'Pricing',
+      content: '<p>html</p>',
+      metadata: {
+        background: false,
+        _id: '602fdf2d540c00269e056179',
+        name: 'pricing',
+        section_id: 'pricing',
+        __v: 0,
+        id: '602fdf2d540c00269e056179',
+      },
+      __v: 1,
+      id: '602fdf2d540c00269e056177',
+    });
+    expect(data.background).toBe(false);
+    expect(data.component).toBe('section.section-content');
+    expect(data.sectionId).toBe('pricing');
+    expect(data.html).toBe('<p>html</p>');
+    expect(data.title).toBe('Pricing');
   });
 });
