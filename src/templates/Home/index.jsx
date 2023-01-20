@@ -13,20 +13,21 @@ import Base from '../Base';
 import { mockBase } from '../Base/mock';
 
 import { mapData } from '../../api/map-data';
+import { useLocation } from 'react-router-dom';
 
 function Home() {
   const [data, setData] = useState([]);
   const isMounted = useRef(true);
+  const location = useLocation();
 
   useEffect(() => {
     const load = async () => {
       const pathName = location.pathname.replace(/[^a-z0-9-_]/gi, '');
-      const slug = pathName ? pathName : 'lading-page';
+      const slug = pathName ? pathName : 'landing-page';
 
       try {
         const data = await fetch(
-          // 'http://localhost:1337/api/pages?populate=deep&pagination[pageSize]=1&sort[0]=id:desc',
-          'http://localhost:1337/api/pages/?slug=landing-page&populate=deep',
+          `http://localhost:1337/api/pages/?slug=${slug}&populate=deep`,
         );
         const json = await data.json();
         const { attributes } = json.data[0];
@@ -44,7 +45,7 @@ function Home() {
     return () => {
       isMounted.current = false;
     };
-  });
+  }, [location]);
 
   // useEffect(() => {
   //   if (data === undefined) {

@@ -6,6 +6,7 @@ export const mapMenu = (menu = {}) => {
     logo: { url: srcImg = '' } = '',
     menu_links: links = [],
   } = menu;
+
   return {
     newTab,
     text,

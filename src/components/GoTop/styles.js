@@ -11,7 +11,7 @@ export const Container = styled.a`
     width: 4rem;
     height: 4rem;
     bottom: 2rem;
-    right: 3rem;
+    right: 2rem;
     z-index: 6;
     opacity: 0.7;
   `};

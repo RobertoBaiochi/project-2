@@ -74,7 +74,7 @@ export const Button = styled.button`
       z-index: 6;
       position: fixed;
       top: 2rem;
-      right: 3rem;
+      right: 2rem;
       width: ${theme.font.sizes.xlarge};
       height: ${theme.font.sizes.xlarge};
       background: ${theme.colors.primaryColor};
