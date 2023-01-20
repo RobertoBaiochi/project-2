@@ -88,10 +88,12 @@ export const mapImageGrid = (section = {}) => {
     title = '',
     description = '',
     metadata: { background = false, section_id: sectionId = '' } = false,
-    image_grid: { image: grid = [] },
+    image_grid: [
+      {
+        image: { data: grid = [] },
+      },
+    ],
   } = section;
-
-  // grid -- image: { data: { attributes: { url: srcImg = '' } = {} } = {} } = {},
 
   return {
     component: 'section.section-grid-image',
@@ -99,10 +101,10 @@ export const mapImageGrid = (section = {}) => {
     description,
     background,
     sectionId,
-    grid: grid.map((image) => {
+    grid: grid.map((attr) => {
       const {
         attributes: { url: srcImg = '', alternativeText: altText = '' },
-      } = image;
+      } = attr;
       return {
         srcImg,
         altText,

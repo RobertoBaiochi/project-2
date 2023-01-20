@@ -4,9 +4,15 @@ import Heading from '../Heading';
 import SectionBackground from '../SectionBackground';
 import TextComponent from '../TextComponent';
 
-const GridGallery = ({ background = false, title, description, grid }) => {
+const GridGallery = ({
+  background = false,
+  title,
+  description,
+  grid,
+  sectionId = '',
+}) => {
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
         <Heading size="huge" uppercase colorDark={!background} as="h2">
           {title}
@@ -36,4 +42,5 @@ GridGallery.propTypes = {
       srcImg: P.string.isRequired,
     }),
   ).isRequired,
+  sectionId: P.string,
 };
