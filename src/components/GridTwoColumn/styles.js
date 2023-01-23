@@ -7,6 +7,7 @@ export const Container = styled.div`
     grid-template-columns: 1fr 2fr;
     align-items: center;
     gap: ${theme.spacing.large};
+    margin-bottom: ${theme.spacing.xlarge};
 
     @media ${theme.media.lteMedium} {
       grid-template-columns: 1fr;

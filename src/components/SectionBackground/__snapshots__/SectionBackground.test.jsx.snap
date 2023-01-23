@@ -19,12 +19,14 @@ exports[`<SectionBackground /> should render with background dark 1`] = `
 
 .c1 {
   max-width: 120rem;
+  width: 100%;
   margin-inline: auto;
   padding: 3.2rem;
 }
 
 <div
   class="c0"
+  id=""
 >
   <div
     class="c1"
@@ -53,12 +55,14 @@ exports[`<SectionBackground /> should render with background dark 2`] = `
 
 .c1 {
   max-width: 120rem;
+  width: 100%;
   margin-inline: auto;
   padding: 3.2rem;
 }
 
 <div
   class="c0"
+  id=""
 >
   <div
     class="c1"
