@@ -29,9 +29,7 @@ function Home() {
 
       try {
         const data = await fetch(
-          `${config.url}${slug}&populate=deep`,
-          // `http://localhost:1337/api/pages/?slug=${slug}&populate=deep`,
-          //http://localhost:1337/api/pages/?slug=landing-page&populate=deep`
+          `https://strapi-v4-test-zae9.onrender.com/api/pages/?filtes[slug]=${slug}-page&populate=deep`,
         );
         const json = await data.json();
         const { attributes } = json.data[0];
