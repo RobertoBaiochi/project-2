@@ -15,6 +15,8 @@ import { mockBase } from '../Base/mock';
 import { mapData } from '../../api/map-data';
 import { useLocation } from 'react-router-dom';
 
+import config from '../../config';
+
 function Home() {
   const [data, setData] = useState([]);
   const isMounted = useRef(true);
@@ -27,7 +29,8 @@ function Home() {
 
       try {
         const data = await fetch(
-          `http://localhost:1337/api/pages/?slug=${slug}&populate=deep`,
+          `${config.url}${slug}&populate=deep`,
+          // `http://localhost:1337/api/pages/?slug=${slug}&populate=deep`,
           //http://localhost:1337/api/pages/?slug=landing-page&populate=deep`
         );
         const json = await data.json();
@@ -36,6 +39,7 @@ function Home() {
         setData(() => pageData[0]);
       } catch {
         setData(undefined);
+        console.log();
       }
     };
 
@@ -48,19 +52,19 @@ function Home() {
     };
   }, [location]);
 
-  // useEffect(() => {
-  //   if (data === undefined) {
-  //     document.title = `Página não encontrada | ${config.siteName}`;
-  //   }
+  useEffect(() => {
+    if (data === undefined) {
+      document.title = `Página não encontrada | ${config.siteName}`;
+    }
 
-  //   if (data && !data.slug) {
-  //     document.title = `Carregando... | ${config.siteName}`;
-  //   }
+    if (data && !data.slug) {
+      document.title = `Carregando... | ${config.siteName}`;
+    }
 
-  //   if (data && data.title) {
-  //     document.title = `${data.title} | ${config.siteName}`;
-  //   }
-  // }, [data]);
+    if (data && data.title) {
+      document.title = `${data.title} | ${config.siteName}`;
+    }
+  }, [data]);
 
   if (data === undefined) {
     return <PageNotFound />;

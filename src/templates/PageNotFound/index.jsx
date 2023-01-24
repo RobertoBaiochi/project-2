@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
+import config from '../../config';
 import GridContent from '../../components/GridContent';
 
 const PageNotFound = () => {
+  useEffect(() => {
+    document.title = `Página não encontrada | ${config.siteName}`;
+  }, []);
+
   return (
     <GridContent
       title="Error 404"

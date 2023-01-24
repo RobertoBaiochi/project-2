@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/global-styles';
 import Home from './templates/Home';
+import PageNotFound from './templates/PageNotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <GlobalStyles />
       </BrowserRouter>
