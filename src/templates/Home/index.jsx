@@ -29,7 +29,7 @@ function Home() {
 
       try {
         const data = await fetch(
-          `https://strapi-v4-test-zae9.onrender.com/api/pages/?filtes[slug]=${slug}-page&populate=deep`,
+          `https://strapi-v4-test-zae9.onrender.com/api/pages/?filtes[slug]=${slug}&populate=deep`,
         );
         const json = await data.json();
         const { attributes } = json.data[0];
@@ -37,7 +37,6 @@ function Home() {
         setData(() => pageData[0]);
       } catch {
         setData(undefined);
-        console.log();
       }
     };
 
